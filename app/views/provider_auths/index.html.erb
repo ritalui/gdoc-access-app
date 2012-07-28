@@ -1,0 +1,24 @@
+<% title "Web Service Provider Authentications" %>
+
+<table>
+     <tr> 
+        <th>User</th>
+	<th>Provider</th>
+	<th>                 </th>
+	<th>Provider's uid </th>
+	<th>                 </th>
+	<th>Access Token</th>
+     </tr>
+  <tbody>
+     <% @auths.each do |entry| %>
+     <tr>
+        <td><%= entry.user_id %></td>
+	<td><%= entry.provider.titleize %></td>
+	<td><%= image_tag "#{entry.provider}_32.png", :size => "32x32" %></td>
+	<td><%= entry.uid %></td>
+        <td>                  </td>
+	<td><%= entry.access_token %></td>
+     </tr>
+     <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,22 @@
+<% title "Users" %>
+
+<table>
+     <tr> 
+        <th>User ID</th>
+	<th>Email Address</th>
+	<th>Admin? </th>
+     </tr>
+  <tbody>
+     <% @users.each do |user| %>
+     <tr>
+        <td><%= user.id %></td>
+	<td><%= user.email %></td>
+	<% if user.isAdmin %>
+	  <td>Y</td>
+	<% else %>
+	  <td>N</td>
+	<% end %>
+     </tr>
+     <% end %>
+  </tbody>
+</table>
