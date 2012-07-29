@@ -1,0 +1,30 @@
+<% title "Task List" %>
+
+<%= @assignment.title %>
+<br>
+
+<%= @assignment.description %>
+
+<br>
+<br>
+<br>
+<% google_auth = false %>
+<% @auths.each do |entry| %>
+  <% if entry.provider.titleize == "Google Oauth2" %>
+      <% google_auth = true %>
+  <% end %>
+<% end %>
+
+<% if google_auth %>
+   Permission granted
+<% end %>
+<br>
+<br>
+To submit work from your Google account, please click the Google icon
+below to grant us permission to access your Google files. 
+<table>
+  <tr>	
+    <td><%= link_to (image_tag 'google_oauth2_64.png'), url_for('/auth/google_oauth2')%></td>
+    <td><b>Google Documents</b></td>
+</tr>
+</table>
