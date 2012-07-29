@@ -46,3 +46,4 @@ proj = Assignment.new(:title => "Assignment 3: Design Patterns Tutorial",
                                       + "one of the design patterns discussed in class. Alternatively, " \
                                       + "you may submit a slide presentation with a script.")
 proj.save
+

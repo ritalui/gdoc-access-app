@@ -1,8 +1,11 @@
 GdocAccessApp::Application.routes.draw do
+
+  get "static_page/google_access", :as => "google_access"
+
   resources :users
   resources :sessions
   resources :provider_auths
-
+  
   root :to => "sessions#new"
 
   match '/auth/:provider/callback' => 'provider_auths#create'
