@@ -28,7 +28,7 @@ class ProviderAuthsController < ApplicationController
       authEntry.refresh_token = auth['credentials']['refresh_token']
       authEntry.save
     end
-    redirect_to provider_auths_path
+    redirect_to user_tasks_url
   end
 
   def destroy

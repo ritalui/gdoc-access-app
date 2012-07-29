@@ -43,19 +43,6 @@ ActiveRecord::Schema.define(:version => 20120728030232) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "submittedworks", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "assignment_id"
-    t.string   "file_name"
-    t.text     "file_text"
-    t.string   "submitted_link"
-    t.string   "provider"
-    t.integer  "reviewer_id"
-    t.text     "review_comments"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"

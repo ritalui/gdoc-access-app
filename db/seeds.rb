@@ -11,38 +11,41 @@ user = User.new(:email => "admin@protoapp.com",
 user.isAdmin = true
 user.save
 
-user = User.new(:email => "john@example.com",
+user1 = User.new(:email => "john@example.com",
                 :password => "password",
                 :password_confirmation => "password")
-user.save
+user1.save
 
-user = User.new(:email => "mary@example.com",
+user2 = User.new(:email => "mary@example.com",
                 :password => "password",
                 :password_confirmation => "password")
-user.save
+user2.save
 
-user = User.new(:email => "paul@example.com",
+user3 = User.new(:email => "paul@example.com",
                 :password => "password",
                 :password_confirmation => "password")
-user.save
+user3.save
 
-proj = Assignment.new(:title => "Assignment 1: Use Cases",
+proj1 = Assignment.new(:title => "Assignment 1: Use Cases",
                       :description => "In the assignment, you are asked to reserach on the importance and " \
                                       + "usage of use cases. Include examples and your thoughts on " \
                                       + "the topic.")
-proj.save
+proj1.save
 
-proj = Assignment.new(:title => "Assignment 2: Rails App",
+proj2 = Assignment.new(:title => "Assignment 2: Rails App",
                       :description => "In the assignment, you are asked to write a simple Rails " \
                                       + "application to be used in a school library that has the following " \
                                       + "functions:\n" \
                                       + "(1) a menu to enter a book's information such as title, author ... " \
                                       + "(2) check-in and check-out of books " \
                                       + "(3) listing of all books in the system and their status")
-proj.save
+proj2.save
 
-proj = Assignment.new(:title => "Assignment 3: Design Patterns Tutorial",
+proj3 = Assignment.new(:title => "Assignment 3: Design Patterns Tutorial",
                       :description => "You may create a short video (no more than 10 minutes) to describe " \
                                       + "one of the design patterns discussed in class. Alternatively, " \
                                       + "you may submit a slide presentation with a script.")
-proj.save
+proj3.save
+
+user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map.save

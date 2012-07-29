@@ -1,7 +1,10 @@
 GdocAccessApp::Application.routes.draw do
+#  get "user_tasks/index"
+
   resources :users
   resources :sessions
   resources :provider_auths
+  resources :user_tasks
 
   root :to => "sessions#new"
 
