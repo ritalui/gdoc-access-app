@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728030232) do
+ActiveRecord::Schema.define(:version => 20120729201829) do
 
   create_table "assignments", :force => true do |t|
     t.string   "title"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20120728030232) do
     t.integer  "user_id"
     t.integer  "assignment_id"
     t.string   "file_name"
-    t.text     "file_text"
     t.string   "submitted_link"
     t.string   "provider"
     t.integer  "reviewer_id"
