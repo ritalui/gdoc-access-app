@@ -16,6 +16,10 @@ class SessionsController < ApplicationController
 
   # log out
   def destroy
+    # Delete Authentication entry for current user
+    @provider_auth = ProviderAuth.where("user_id = ?", current_user.id)
+    @provider_auth.destroy_all
+
     session[:user_id] = nil
     redirect_to root_url
   end
