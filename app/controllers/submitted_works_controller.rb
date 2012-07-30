@@ -7,7 +7,6 @@ class SubmittedWorksController < ApplicationController
     @work = SubmittedWork.where("user_id = ?", current_user.id).first
     filename = params[:filename]
     result_hash = search_by_title(filename)
-    puts "Result hash: #{result_hash}"
     file_url = result_hash['items'][0]['alternateLink']
     file_id = result_hash['items'][0]['id']
     result = insert_permission(file_id)
@@ -22,8 +21,6 @@ class SubmittedWorksController < ApplicationController
   
   def search_by_title(filename)
     parameters = { 'q' => "title = '#{filename}' " } 
-    puts "Here are parameters #{parameters}"
-    puts "Client: #{client}"
     result = client.execute(:api_method =>drive.files.list,
                              :parameters => parameters)
     if result.status == 200
