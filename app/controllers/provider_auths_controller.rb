@@ -3,7 +3,6 @@ require 'google/api_client'
 class ProviderAuthsController < ApplicationController
   def index
     @auths = ProviderAuth.all
-#    @provider_auths = current_user.provider_auths if current_user
   end
 
   def create

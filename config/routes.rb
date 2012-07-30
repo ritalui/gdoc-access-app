@@ -1,6 +1,6 @@
 GdocAccessApp::Application.routes.draw do
-
-  get "submitted_works/update"
+  
+  post "submitted_works/list"
   
   post "submitted_works/update"
 

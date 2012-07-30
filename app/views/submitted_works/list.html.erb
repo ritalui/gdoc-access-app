@@ -1,0 +1,15 @@
+<h1>Review List</h1>
+<table>
+	<tr><td><b>Filename</b></td>
+		<td></td>
+		<td><b>URL</b></td></tr>
+  <tr>
+	
+	<% @user_tasks.each do |entry| %>
+	
+    <td><%= entry.file_name %></td>
+    <td></td>
+    <td> <a href= "<%= entry.submitted_link %>"><%= entry.submitted_link %></a></td>
+</tr>
+    <% end %>
+</table>
