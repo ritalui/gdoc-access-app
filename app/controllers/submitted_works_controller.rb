@@ -10,13 +10,12 @@ class SubmittedWorksController < ApplicationController
     file_url = result_hash['items'][0]['alternateLink']
     file_id = result_hash['items'][0]['id']
     result = insert_permission(file_id)
-    @filename = @work.file_name
-    @url = @work.submitted_link
     if result == 200
       @work.update_attributes(:file_name => filename, :submitted_link => file_url)
     else
       flash[:notice] = "File permissions could not be set!"
     end
+    redirect_to :controller => 'user_tasks', :action => 'index' 
   end
   
   def search_by_title(filename)
@@ -50,6 +49,10 @@ class SubmittedWorksController < ApplicationController
   end
   
   def submit_filename
+  end
+  
+  def list
+    @user_tasks = SubmittedWork.where("user_id = ?", current_user.id)
   end
   
   def destroy

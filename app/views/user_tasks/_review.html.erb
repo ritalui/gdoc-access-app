@@ -1,0 +1,21 @@
+<% file_entry = false %>
+<% @user_tasks.each do |entry| %>
+  <% if !entry.file_name.nil? %>
+      <% file_entry = true %>
+  <% end %>
+<% end %>
+<% if file_entry %>
+   <h3>File saved successfully!</h3>
+  <table>
+    <% @user_tasks.each do |entry| %>
+       <tr>
+       <td><%= entry.file_name %></td>
+       <td>
+         <%= form_tag(:controller => "submitted_works", :action => "list", :method => "get") do %> 
+            <%= submit_tag("Review")%>
+		 <% end %> 
+       </td>
+       </tr>
+  <% end %>
+  </table>
+<% end %>
