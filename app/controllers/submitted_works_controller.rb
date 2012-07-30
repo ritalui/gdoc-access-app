@@ -20,7 +20,11 @@ class SubmittedWorksController < ApplicationController
   end
   
   def search_by_title(filename)
-    parameters = { 'q' => "title = '#{filename}' " } 
+    # search for apostrophe's in filename and preceed it with "\\"
+    # otherwise it would result in a 400 error
+    new_filename = filename.gsub(/\'/, "\\\\'")
+
+    parameters = { 'q' => "title = '#{new_filename}'" } 
     result = client.execute(:api_method =>drive.files.list,
                              :parameters => parameters)
     if result.status == 200
