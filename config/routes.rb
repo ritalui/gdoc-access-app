@@ -1,5 +1,13 @@
 GdocAccessApp::Application.routes.draw do
 
+  get "submitted_works/update"
+  
+  post "submitted_works/update"
+
+  get "submitted_works/submit_filename"
+  
+  get "submitted_works/destroy"
+
   resources :users
   resources :sessions
   resources :provider_auths

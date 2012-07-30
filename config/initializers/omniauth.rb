@@ -14,8 +14,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                   + "https://docs.google.com/feeds/ " \
                   + "https://docs.googleusercontent.com/"
 
-  provider :google_oauth2, "CLIENT_ID",
-                           "CLIENT_SECRET",
+  provider :google_oauth2, CLIENT_ID,
+                           CLIENT_SECRET,
                            :scope => googleDocsScope
  
  end

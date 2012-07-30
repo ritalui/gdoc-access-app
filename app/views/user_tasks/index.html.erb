@@ -17,6 +17,7 @@
 
 <% if google_auth %>
    Permission granted
+   <%= link_to "Submit Work", {:controller => "submitted_works" , :action => "submit_filename"}%>
 <% end %>
 <br>
 <br>
