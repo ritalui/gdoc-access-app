@@ -35,7 +35,7 @@ proj1.save
 proj2 = Assignment.new(:title => "Assignment 2: Rails App",
                       :description => "In the assignment, you are asked to write a simple Rails " \
                                       + "application to be used in a school library that has the following " \
-                                      + "functions:\n" \
+                                      + "functions:  " \
                                       + "(1) a menu to enter a book's information such as title, author ... " \
                                       + "(2) check-in and check-out of books " \
                                       + "(3) listing of all books in the system and their status")
@@ -53,8 +53,8 @@ user_proj_map.save
 user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
 user_proj_map.save
 
-user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map = SubmittedWork.new(:user_id => user2.id, :assignment_id => proj2.id)
 user_proj_map.save
 
-user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map = SubmittedWork.new(:user_id => user3.id, :assignment_id => proj3.id)
 user_proj_map.save
