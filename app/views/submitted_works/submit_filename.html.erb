@@ -1,0 +1,7 @@
+<h1>Submit Google Doc</h1>
+
+<%= form_tag(:controller => "submitted_works", :action => "update", :method => "put") do %>
+  <%= label_tag(:filename, "Filename:") %>
+  <%= text_field_tag(:filename) %>
+  <%= submit_tag("Enter") %>
+<% end %>
