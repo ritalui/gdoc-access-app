@@ -4,7 +4,19 @@ class SubmittedWorksController < ApplicationController
   end
    
   def update
-    @work = SubmittedWork.where("user_id = ?", current_user.id).first
+    @works = SubmittedWork.where("user_id = ?", current_user.id)
+    @works.each do |work|
+      if work.file_name.nil?
+        @work = work
+        break
+      end  
+    end
+    
+    if (@work.nil?)
+      flash[:error] = "New Submissions cannot be made!"
+      redirect_to :controller => 'user_tasks', :action => 'index' 
+    else
+    
     filename = params[:filename]
     result_hash = search_by_title(filename)
     file_url = result_hash['items'][0]['alternateLink']
@@ -16,6 +28,8 @@ class SubmittedWorksController < ApplicationController
       flash[:notice] = "File permissions could not be set!"
     end
     redirect_to :controller => 'user_tasks', :action => 'index' 
+    
+  end
   end
   
   def search_by_title(filename)

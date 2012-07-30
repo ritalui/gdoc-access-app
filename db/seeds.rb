@@ -49,3 +49,12 @@ proj3.save
 
 user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
 user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map.save
