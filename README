@@ -29,11 +29,17 @@ seeded:
 --------------------------------------------------------------------------------
 DEVELOPMENT
 --------------------------------------------------------------------------------
-To start the app:
+1. Edit config/initializers/omniauth.rb and replace CLIENT_ID and CLIENT_SECRET
+   with the real info.
 
-$ git pull https://github.com/ritalui/gdoc-access-app.git 
-$ rake db:setup
-$ rails s -b localhost 
+2. At the project's root directory:
+
+   $ bundle install
+   $ rake db:setup
+
+2. To bring up Rails server:
+
+   $ rails s -b localhost 
 
 --------------------------------------------------------------------------------
 FLOW OF EVENTS
