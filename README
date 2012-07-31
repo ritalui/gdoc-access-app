@@ -1,4 +1,4 @@
-E507 - Google Docs support for Expertiza
+Google Docs support for Expertiza
 
 --------------------------------------------------------------------------------
 TEAM
@@ -15,7 +15,7 @@ Google files using Google Drive API. It serves as a proof of concept for
 implementing Google Docs support in Expertiza.
 
 --------------------------------------------------------------------------------
-PROJECT IMPLEMENTATION DETAILS
+SEED DATA
 --------------------------------------------------------------------------------
 Due to time constraints, admin funtions were not implemented, even though the 
 user model supports such notion. In config/seeds.rb, the following data is 
@@ -24,7 +24,16 @@ seeded:
 * 3 users
 * 3 assignments
 * the linking of users to assignments is hardcoded in submitted_works table
-  via seed data in the submitted_works table
+  via seed data 
+
+--------------------------------------------------------------------------------
+DEVELOPMENT
+--------------------------------------------------------------------------------
+To start the app:
+
+$ git pull https://github.com/ritalui/gdoc-access-app.git 
+$ rake db:setup
+$ rails s -b localhost 
 
 --------------------------------------------------------------------------------
 FLOW OF EVENTS
@@ -46,6 +55,8 @@ FLOW OF EVENTS
 9. User is re-directed back to the task list.
 10. User can click on the review button to see a list of the files he/she
     has submitted and their links.
+11. Anyone can use the link(s) displayed to view the file and comment on the 
+    file via a browser
 
 --------------------------------------------------------------------------------
 NOTES
