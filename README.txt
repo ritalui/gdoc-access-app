@@ -1,3 +1,58 @@
+E507 - Google Docs support for Expertiza
 
-This is a prototype app to access a user's files via Google Drive API v2.
+--------------------------------------------------------------------------------
+TEAM
+--------------------------------------------------------------------------------
+Neelam Chitnis: ncchini@ncsu.edu
+Chetana Kethinedi: ckethin@ncsu.edu
+Rita Lui: wylui@ncsu.edu
+
+--------------------------------------------------------------------------------
+PROJECT GOALS
+--------------------------------------------------------------------------------
+This is a prototype Rails app developed to demonstrate how to access a user's 
+Google files using Google Drive API. It serves as a proof of concept for 
+implementing Google Docs support in Expertiza.
+
+--------------------------------------------------------------------------------
+PROJECT IMPLEMENTATION DETAILS
+--------------------------------------------------------------------------------
+Due to time constraints, admin funtions were not implemented, even though the 
+user model supports such notion. In config/seeds.rb, the following data is 
+seeded:
+* 1 admin 
+* 3 users
+* 3 assignments
+* the linking of users to assignments is hardcoded in submitted_works table
+  via seed data in the submitted_works table
+
+--------------------------------------------------------------------------------
+FLOW OF EVENTS
+--------------------------------------------------------------------------------
+1. User signs in.
+2. Upon successful authentication, user is directed to a task list that shows
+   the assignment he/she is assigned.
+3. User wishes to submit a document from his/her Google account, so he/she
+   clicks on the Google icon to initiate the authroization/authentication
+   process.
+4. User is re-directed to Google's server to be authenticated and asked to
+   grant this app access permissions to his/her files.
+5. User is re-directed to his/her task list. 
+6. User clicks on a submit link and is asked to enter the name of the
+   Google file to be submitted.
+7. This app uses the Google API client to search the file by name. 
+8. If the file is found, a new permission is added to the file to allow
+   "anyone with the link" to comment on the file.
+9. User is re-directed back to the task list.
+10. User can click on the review button to see a list of the files he/she
+    has submitted and their links.
+
+--------------------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------------------
+* omniauth and omniauth-google-oauth2 gems are used for oauth 2 authorization
+  and authentication
+* google-api-client gem is used to interface with Google Drive API v2
+* due to time constraints, there is no code that uses a refresh_token to get a 
+  new access_token once it expires
 

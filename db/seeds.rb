@@ -53,7 +53,22 @@ user_proj_map.save
 user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
 user_proj_map.save
 
+user_proj_map = SubmittedWork.new(:user_id => user1.id, :assignment_id => proj1.id)
+user_proj_map.save
+
 user_proj_map = SubmittedWork.new(:user_id => user2.id, :assignment_id => proj2.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user2.id, :assignment_id => proj2.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user2.id, :assignment_id => proj2.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user3.id, :assignment_id => proj3.id)
+user_proj_map.save
+
+user_proj_map = SubmittedWork.new(:user_id => user3.id, :assignment_id => proj3.id)
 user_proj_map.save
 
 user_proj_map = SubmittedWork.new(:user_id => user3.id, :assignment_id => proj3.id)
